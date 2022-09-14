@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # application 실행 시점에 내가 가지고 있는 table을 다 지우고 다시 생성하는 것
+#      ddl-auto: none
+    properties:
+      hibernate:
+#        show_sql: true 얘는 System.out으로 출력됨. 안 써야 됨
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
